@@ -1,0 +1,25 @@
+From f113b764123924324f6bcb8c02ade5a675761c32 Mon Sep 17 00:00:00 2001
+From: hanwckf <my375229675@gmail.com>
+Date: Mon, 7 Jan 2019 03:39:06 +0800
+Subject: [PATCH] fix.3
+
+---
+ mt_wifi/include/os/rt_linux.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mt_wifi/include/os/rt_linux.h b/mt_wifi/include/os/rt_linux.h
+index e0bfc2c..e8c7308 100644
+--- a/mt_wifi/include/os/rt_linux.h
++++ b/mt_wifi/include/os/rt_linux.h
+@@ -860,7 +860,7 @@ void linux_pci_unmap_single(void *handle, ra_dma_addr_t dma_addr, size_t size, i
+ 
+ #define SKB_BUF_HEADTAIL_RSV	(SKB_BUF_HEADROOM_RSV + SKB_BUF_TAILROOM_RSV)
+ /* Need to do below miniume size protect for build_skb method, to avoid DATAABORT issue. */
+-#define SKB_BUF_MINIMUN_SIZE	(1984)
++#define SKB_BUF_MINIMUN_SIZE	(2048)
+ 
+ 
+ #ifdef  CONFIG_WIFI_BUILD_SKB
+-- 
+2.20.1
+
