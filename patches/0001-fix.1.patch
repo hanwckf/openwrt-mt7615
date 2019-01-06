@@ -1,4 +1,4 @@
-From 423457c545ca424e3602c40781059f18a918dd60 Mon Sep 17 00:00:00 2001
+From cfc2692035669b04464f774bbe67a3a5c41a8372 Mon Sep 17 00:00:00 2001
 From: hanwckf <my375229675@gmail.com>
 Date: Sun, 6 Jan 2019 23:17:39 +0800
 Subject: [PATCH] fix.1
@@ -276,7 +276,7 @@ index 8c46ada..2dcbc3d 100644
  
  #ifdef RTMP_MAC_PCI
 diff --git a/mt_wifi_ap/Makefile b/mt_wifi_ap/Makefile
-index ff13d57..c3aa206 100644
+index ff13d57..a57b59d 100644
 --- a/mt_wifi_ap/Makefile
 +++ b/mt_wifi_ap/Makefile
 @@ -1,22 +1,46 @@
@@ -302,9 +302,9 @@ index ff13d57..c3aa206 100644
 -obj-$(CONFIG_MT_AP_SUPPORT) += $(DRV_NAME).o
 +obj-m += $(DRV_NAME).o
 +
-+EXTRA_CFLAGS = -I../mt_wifi/include \
-+	-I../mt_wifi/embedded/include \
-+	-I../mt_wifi/ate/include
++EXTRA_CFLAGS = -I$(src)/../mt_wifi/include \
++	-I$(src)/../mt_wifi/embedded/include \
++	-I$(src)/../mt_wifi/ate/include
 +
 +EXTRA_CFLAGS += \
 +	-DCONFIG_SUPPORT_OPENWRT \
