@@ -1,0 +1,38 @@
+From 8401478caf3542a4a3160300df863a8a192ad582 Mon Sep 17 00:00:00 2001
+From: hanwckf <my375229675@gmail.com>
+Date: Mon, 7 Jan 2019 14:40:38 +0800
+Subject: [PATCH] fix.4
+
+---
+ mt_wifi/os/linux/rt_linux.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/mt_wifi/os/linux/rt_linux.c b/mt_wifi/os/linux/rt_linux.c
+index 5d19a5e..d76a4d3 100644
+--- a/mt_wifi/os/linux/rt_linux.c
++++ b/mt_wifi/os/linux/rt_linux.c
+@@ -362,8 +362,8 @@ void RtmpFlashRead(
+ #else
+ 	//wilsonl, fix compile for temp
+ #ifndef MT7622
+-	/* ra_mtd_read_nm("Factory", a&0xFFFF, (size_t) b, p); */
+-	ra_mtd_read_nm("Factory", a, (size_t) b, p);  /* triple card needs to access beyond 0xFFFF , don't mask */
++	ra_mtd_read_nm("factory", a&0xFFFF, (size_t) b, p);
++	//ra_mtd_read_nm("Factory", a, (size_t) b, p);  /* triple card needs to access beyond 0xFFFF , don't mask */
+ #endif
+ #endif
+ #endif /* CONFIG_RALINK_FLASH_API */
+@@ -382,8 +382,8 @@ void RtmpFlashWrite(
+ #else
+ 	//wilsonl, fix compile for temp
+ #ifndef MT7622
+-	/* ra_mtd_write_nm("Factory", a&0xFFFF, (size_t) b, p); */
+-	ra_mtd_write_nm("Factory", a, (size_t) b, p);  /* triple card needs to access beyond 0xFFFF , don't mask */
++	ra_mtd_write_nm("factory", a&0xFFFF, (size_t) b, p);
++	//ra_mtd_write_nm("Factory", a, (size_t) b, p);  /* triple card needs to access beyond 0xFFFF , don't mask */
+ #endif
+ #endif
+ #endif /* CONFIG_RALINK_FLASH_API */
+-- 
+2.20.1
+

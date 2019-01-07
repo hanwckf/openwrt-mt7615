@@ -74,17 +74,17 @@ config  RT_THIRD_CARD
 config  RT_FIRST_IF_RF_OFFSET
 	hex "EEPROM FLASH Offset of 1st Wireless Interface"
 	depends on ! FIRST_IF_NONE
-	default 0x0
+	default 0x40000
 
 config  RT_SECOND_IF_RF_OFFSET
 	hex "EEPROM FLASH Offset of 2nd Wireless Interface"
 	depends on ! SECOND_IF_NONE
-	default 0x8000
+	default 0x48000
 
 config  RT_THIRD_IF_RF_OFFSET
 	hex "EEPROM FLASH Offset of 3rd Wireless Interface"
 	depends on ! THIRD_IF_NONE
-	default 0x4000
+	default 0x44000
 
 #SKB alloc selection
 config WIFI_SKB_ALLOC_SELECT
