@@ -1,0 +1,25 @@
+From 2c35c12d16d38645ee767ccd57db1805e73afd8f Mon Sep 17 00:00:00 2001
+From: hanwckf <my375229675@gmail.com>
+Date: Tue, 29 Jan 2019 23:09:21 +0800
+Subject: [PATCH] fix.7
+
+---
+ mt_wifi_ap/Makefile | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/mt_wifi_ap/Makefile b/mt_wifi_ap/Makefile
+index a57b59d..fd26961 100644
+--- a/mt_wifi_ap/Makefile
++++ b/mt_wifi_ap/Makefile
+@@ -13,6 +13,8 @@ EXTRA_CFLAGS += \
+ 	-Wno-maybe-uninitialized \
+ 	-Wno-date-time
+ 
++EXTRA_CFLAGS += -DVENDOR_FEATURE6_SUPPORT
++
+ ifeq ($(CONFIG_FIRST_IF_EEPROM_PROM),y)
+ EXTRA_CFLAGS += -DCONFIG_RT_FIRST_CARD_EEPROM="\"prom\""
+ endif
+-- 
+2.20.1
+
